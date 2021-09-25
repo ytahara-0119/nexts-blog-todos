@@ -6,7 +6,7 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 export default function Post({ post }) {
   const router = useRouter();
 
-  if (!post) {
+  if (router.isFallback || !post) {
     return <div>Loading...</div>;
   }
   return (
@@ -44,7 +44,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 

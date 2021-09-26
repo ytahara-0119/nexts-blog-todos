@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 import Layout from "../../components/Layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import {getAllPostIds, getPostData} from "../../lib/posts";
 
 export default function Post({ post }) {
   const router = useRouter();
@@ -49,7 +49,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const { post: post } = await getPostData(params.id);
+  const post  = await getPostData(params.id);
   return {
     props: {
       post,

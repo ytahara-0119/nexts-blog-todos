@@ -22,10 +22,11 @@ export default function TaskForm({ taskCreated }) {
     });
     setSelectedTask({ id:0, title: ""});
     taskCreated();
-  }
+  };
+
   const update = async(e) => {
     e.preventDefault();
-    await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/tasks/${selectedTask.id}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/tasks/${selectedTask.id}/`, {
       method: "PUT",
       body: JSON.stringify({ title: selectedTask.title }),
       headers: {
@@ -60,5 +61,5 @@ export default function TaskForm({ taskCreated }) {
 
       </form>
     </div>
-  )
+  );
 }

@@ -7,7 +7,7 @@ const cookie = new Cookie();
 
 export default function Task({ task, taskDeleted }) {
 
-  const { setSeletedTask } = useContext(StateContext);
+  const { setSelectedTask } = useContext(StateContext);
   
   const deleteTask = async () => {
     await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/tasks/${task.id}`, {
@@ -35,7 +35,7 @@ export default function Task({ task, taskDeleted }) {
       </Link>
       <div className="float-right ml-20">
         <svg 
-          onClick={() => setSeletedTask(task)}
+          onClick={() => setSelectedTask(task)}
           className="w-6 h-6 float-left cursor-pointer" 
           fill="none" 
           stroke="currentColor" 

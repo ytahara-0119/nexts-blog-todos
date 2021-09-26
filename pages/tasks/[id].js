@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import useSWR from "swr";
 import Layout from "../../components/Layout";
 import { getAllTaskIds, getTaskData } from "../../lib/tasks";
-import useSWR from "swr";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
